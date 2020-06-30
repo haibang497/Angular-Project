@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-content">
+        <h4 class="card-title" style="margin-left: 400px">Add New Room</h4>
+        <form (ngSubmit)="onSubmit()" class="col s6">
+            <div class="col-sm-9">
+                <label for="name"><b>Name</b></label>
+                <input type="name" class="form-control" placeholder="Enter Name" required [(ngModel)]="item.Name" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="col-sm-9">
+                <label for="price"><b>Price</b></label>
+                <input type="price" class="form-control" placeholder="Enter Price" required [(ngModel)]="item.Price" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="col-sm-9">
+                <label for="sale"><b>Sale</b></label>
+                <input type="sale" class="form-control" placeholder="Enter Sale" required [(ngModel)]="item.Sale" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="col-sm-9">
+                <label for="status"><b>Status</b></label>
+                <input type="status" class="form-control" placeholder="Enter Status" required [(ngModel)]="item.Status" [ngModelOptions]="{standalone: true}">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success mr-2">Add New</button>
+        </form>
+    </div>
+</div>

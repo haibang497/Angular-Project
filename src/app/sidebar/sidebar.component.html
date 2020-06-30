@@ -1,0 +1,30 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+        <li class="nav-item nav-profile">
+            <div class="nav-link">
+                <div class="profile-image">
+                    <img src="../assets/images\faces\face10.jpg" alt="image">
+                    <span class="online-status online"></span>
+                    <!--change class online to offline or busy as needed-->
+                </div>
+                <div class="profile-name">
+                    <p class="name"></p>
+                    <div *ngIf="!displayName">Login</div>
+                    <div *ngIf="displayName">Chào <b>{{displayName}}</b></div>
+                    <div *ngIf="displayName">
+                        <button class="btn-warning" (click)="Logout()">Sign Out</button>
+                    </div>
+                    <p class="designation">
+                        Super Admin
+                    </p>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/main">
+                <i class="icon-rocket menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+            </a>
+        </li>
+    </ul>
+</nav>

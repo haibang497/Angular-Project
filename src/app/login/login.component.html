@@ -1,0 +1,35 @@
+<div>
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                  </div>
+                  <form class="user" [formGroup] ="frm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." formControlName="email">
+                      <div *ngIf="frm.controls.email.invalid && (frm.controls.email.dirty ||frm.controls.email.touched)">
+		                  <small *ngIf="frm.controls.email.errors.required" class="text-danger">Email is required.</small>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" formControlName="password">
+                      <div *ngIf="frm.controls.password.invalid && (frm.controls.password.dirty ||frm.controls.password.touched)">
+		                    <small *ngIf="frm.controls.password.errors.required" class="text-danger">Password is required.</small>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary btn-user btn-block" (click)="loginwithfirebase()" [disabled]="frm.invalid">
+                    Login with Firebase
+                    </button>
+                    <hr>
+                    <button type="button" class="btn btn-google btn-user btn-block" (click)="tryGoogleLogin()">
+                    Login with Google
+                    </button>
+                  </form>
+                  <hr>
+                  <div class="text-center">
+                    <a class="small" href="forgot-password.html">Forgot Password?</a>
+                  </div>
+                  <div class="text-center">
+                    <a class="small" routerLink="/signup">Create an Account!</a>
+                  </div>
+                </div>
+              </div>
